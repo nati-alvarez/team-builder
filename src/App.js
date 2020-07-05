@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import './App.css';
 
 import Form from './Form';
+import TeamMember from './TeamMember';
 
 function App() {
   const [teamMembers, setTeamMember] = useState([
@@ -20,11 +21,7 @@ function App() {
         <Form addMember={addMember}/>
         {teamMembers.map(person=>{
           return (
-            <div className='member'>
-              <p>{person.name}</p>
-              <p>{person.email}</p>
-              <p>{person.role}</p>
-            </div>
+            <TeamMember person={person}/>
           )
         })}
       </div>
