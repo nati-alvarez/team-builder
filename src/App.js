@@ -9,11 +9,14 @@ function App() {
     {name: "Mary", email: "mary@hotmail.com", role: "Frontend"},
     {name: "Sam", email: "sam@gmail.com", role: "UI"}
   ]);
+  function addMember(person){
+    setTeamMember(...teamMembers, person);
+  }
   return (
     <div className="App">
       <div className="team-members">
         <h1>Team Members</h1>
-        <Form/>
+        <Form addMember={addMember}/>
         {teamMembers.map(person=>{
           return (
             <div className='member'>

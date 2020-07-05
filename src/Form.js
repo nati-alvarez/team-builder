@@ -1,13 +1,14 @@
 import React, {useState} from "react";
 
-export default function Form(){
+export default function Form({addMember}){
     const [formData, setFormData] = useState({
         name: "",
         email: "",
         role: "",
-    })
+    });
+    const {name, email, role} = formData;
     return (
-        <form>
+        <form onClick={e=> {addMember(name, email, role)}}>
             <input type="text" name="name" placeholder="Enter your name"/>
             <input type="email" name="email" placeholder="Enter your email"/>
             <select name="role">
