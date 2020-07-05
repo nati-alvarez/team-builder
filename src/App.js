@@ -9,8 +9,9 @@ function App() {
     {name: "Mary", email: "mary@hotmail.com", role: "Frontend"},
     {name: "Sam", email: "sam@gmail.com", role: "UI"}
   ]);
-  function addMember(person){
-    setTeamMember(...teamMembers, person);
+  function addMember(e, person){
+    e.preventDefault();
+    setTeamMember(teamMembers.concat(person));
   }
   return (
     <div className="App">

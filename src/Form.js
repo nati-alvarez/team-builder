@@ -6,7 +6,6 @@ export default function Form({addMember}){
         email: "",
         role: "Backend",
     });
-    console.log(formData)
     const {name, email, role} = formData;
     function updateData(e){
         setFormData({
@@ -15,7 +14,7 @@ export default function Form({addMember}){
         });
     }
     return (
-        <form onSubmit={e=> {addMember(name, email, role)}}>
+        <form onSubmit={e=> addMember(e, {name, email, role})}>
             <input onChange={updateData}type="text" name="name" placeholder="Enter your name"/>
             <input onChange={updateData} type="email" name="email" placeholder="Enter your email"/>
             <select onChange={updateData} name="role">  
@@ -24,6 +23,7 @@ export default function Form({addMember}){
                 <option value="Fullstack">Fullstack</option>
                 <option value="UI">UI</option>
             </select>
+            <button>Submit</button>
         </form>
     )
 }
