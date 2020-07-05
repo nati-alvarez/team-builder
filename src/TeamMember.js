@@ -1,8 +1,8 @@
 import React from "react";
 
-export default function TeamMember({person}){
+export default function TeamMember({setMemberToEdit, person}){
     return (
-        <div className="member">
+        <div onClick={()=> setMemberToEdit(person)} className="member">
             <p>{person.name}</p>
             <p>{person.email}</p>
             <p>{person.role}</p>

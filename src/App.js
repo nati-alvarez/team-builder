@@ -10,18 +10,31 @@ function App() {
     {name: "Mary", email: "mary@hotmail.com", role: "Frontend"},
     {name: "Sam", email: "sam@gmail.com", role: "UI"}
   ]);
+  const [memberToEdit, setMemberToEdit] = useState();
+  
   function addMember(e, person){
     e.preventDefault();
     setTeamMember(teamMembers.concat(person));
   }
+
+  function editMember(e, oldData, newData){
+    e.preventDefault();
+    setMemberToEdit(null);
+    setTeamMember(teamMembers.map(member=>{
+      if(JSON.stringify(oldData) === JSON.stringify(member)){
+        return newData;
+      }else return member;
+    }))
+  }
+
   return (
     <div className="App">
       <div className="team-members">
         <h1>Team Members</h1>
-        <Form addMember={addMember}/>
+        <Form memberToEdit={memberToEdit} editMember={editMember} addMember={addMember}/>
         {teamMembers.map(person=>{
           return (
-            <TeamMember person={person}/>
+            <TeamMember setMemberToEdit={setMemberToEdit} person={person}/>
           )
         })}
       </div>
