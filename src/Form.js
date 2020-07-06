@@ -10,12 +10,17 @@ export default function Form({editMember, addMember, memberToEdit}){
 
     useEffect(()=>{
         if(memberToEdit) setFormData(memberToEdit);
-        if(!memberToEdit) setFormData({name: "", email: "", role: "Backend"})
+        if(!memberToEdit) resetFormData();
     }, [memberToEdit]);
     
+    function resetFormData(){
+        setFormData({name: "", email: "", role: "Backend"})
+    }
+
     function submit(e, person){
         if(memberToEdit) return editMember(e, memberToEdit, person);
         addMember(e, person);
+        resetFormData();
     }
 
     function updateData(e){
