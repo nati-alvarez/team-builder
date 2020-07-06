@@ -1,4 +1,16 @@
+.members {
+    display: flex;
+    margin-top: 5vh;
+    flex-wrap: wrap;
+}
+
 .member {
+    width: 25%;
+    margin: 0px 4%;
+    border: 1px solid gainsboro;
+    background: #efefef;
+    padding: 2vh 0;
+    margin-bottom: 3vh;
 }
 
 .member .name {

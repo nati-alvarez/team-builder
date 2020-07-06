@@ -32,11 +32,13 @@ function App() {
       <div className="team-members">
         <h1>Team Builder</h1>
         <Form memberToEdit={memberToEdit} editMember={editMember} addMember={addMember}/>
-        {teamMembers.map(person=>{
-          return (
-            <TeamMember setMemberToEdit={setMemberToEdit} person={person}/>
-          )
-        })}
+        <div className="members">
+          {teamMembers.map(person=>{
+            return (
+              <TeamMember setMemberToEdit={setMemberToEdit} person={person}/>
+            )
+          })}
+        </div>
       </div>
     </div>
   );
