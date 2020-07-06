@@ -27,3 +27,12 @@ form button {
     background: mediumaquamarine;
     border: none;
 }
+
+@media (max-width: 500px){
+    form input, form select {
+        display: block;
+        margin: 0 auto;
+        width: 70%;
+        margin-bottom: 2vh;
+    }
+}
