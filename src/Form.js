@@ -1,11 +1,14 @@
 import React, {useState, useEffect} from "react";
 
+import "./form.css"
+
 export default function Form({editMember, addMember, memberToEdit}){
     const [formData, setFormData] = useState({
         name: "",
         email: "",
         role: "Backend",
     });
+    const [errorMessage, setErrorMessage] = useState("");
     const {name, email, role} = formData;
 
     useEffect(()=>{
@@ -18,6 +21,10 @@ export default function Form({editMember, addMember, memberToEdit}){
     }
 
     function submit(e, person){
+        e.preventDefault();
+        setErrorMessage("");
+        if(!person.name || !person.email || !person.role) return setErrorMessage("All fields are required");
+        if(/[0-9]/.test(person.name)) return setErrorMessage("Name cannot contain numbers")
         if(memberToEdit) return editMember(e, memberToEdit, person);
         addMember(e, person);
         resetFormData();
@@ -40,6 +47,9 @@ export default function Form({editMember, addMember, memberToEdit}){
                 <option value="UI">UI</option>
             </select>
             <button>Submit</button>
+            {errorMessage && <div className="error-message">
+                <p>{errorMessage}</p>
+            </div>}
         </form>
     )
 }

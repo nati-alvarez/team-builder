@@ -1,0 +1,14 @@
+form .error-message {
+    color: crimson;
+    background: lightpink;
+    padding: 5px;
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top: 3vh;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+form .error-message p {
+    margin: 0;
+}
