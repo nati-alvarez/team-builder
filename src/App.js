@@ -30,7 +30,7 @@ function App() {
   return (
     <div className="App">
       <div className="team-members">
-        <h1>Team Members</h1>
+        <h1>Team Builder</h1>
         <Form memberToEdit={memberToEdit} editMember={editMember} addMember={addMember}/>
         {teamMembers.map(person=>{
           return (

@@ -12,3 +12,18 @@ form .error-message {
 form .error-message p {
     margin: 0;
 }
+
+form input, form select, form button {
+    border: 1px solid black;
+    border-radius: 0;
+    padding: 5px;
+    margin: 0 10px;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+
+form button {
+    padding: 6px;
+    background: mediumaquamarine;
+    border: none;
+}
