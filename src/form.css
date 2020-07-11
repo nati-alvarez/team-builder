@@ -1,0 +1,38 @@
+form .error-message {
+    color: crimson;
+    background: lightpink;
+    padding: 5px;
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top: 3vh;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+form .error-message p {
+    margin: 0;
+}
+
+form input, form select, form button {
+    border: 1px solid black;
+    border-radius: 0;
+    padding: 5px;
+    margin: 0 10px;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+
+form button {
+    padding: 6px;
+    background: mediumaquamarine;
+    border: none;
+}
+
+@media (max-width: 500px){
+    form input, form select {
+        display: block;
+        margin: 0 auto;
+        width: 70%;
+        margin-bottom: 2vh;
+    }
+}
