@@ -39,14 +39,20 @@ export default function Form({editMember, addMember, memberToEdit}){
     return (
         <form onSubmit={e=> submit(e, {name, email, role})}>
             <h3>Add Team Member: </h3>
-            <input value={name || ""} onChange={updateData}type="text" name="name" placeholder="Enter your name"/>
-            <input value={email || ""} onChange={updateData} type="email" name="email" placeholder="Enter your email"/>
-            <select value={role || "Backend"} onChange={updateData} name="role">  
-                <option value="Backend">Backend</option>
-                <option value="Frontend">Frontend</option>
-                <option value="Fullstack">Fullstack</option>
-                <option value="UI">UI</option>
-            </select>
+            <label>
+                Name: <input value={name || ""} onChange={updateData}type="text" name="name" placeholder="Enter your name"/>
+            </label>
+            <label>
+                Email: <input value={email || ""} onChange={updateData} type="email" name="email" placeholder="Enter your email"/>
+            </label>
+            <label>
+                <select value={role || "Backend"} onChange={updateData} name="role">  
+                    <option value="Backend">Backend</option>
+                    <option value="Frontend">Frontend</option>
+                    <option value="Fullstack">Fullstack</option>
+                    <option value="UI">UI</option>
+                </select>
+            </label>
             <button>Submit</button>
             {errorMessage && <div className="error-message">
                 <p>{errorMessage}</p>
